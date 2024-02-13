@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proj.HelloController">
+   <children>
+      <TabPane prefHeight="600.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Данные">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="900.0">
+                     <children>
+                        <MenuBar layoutY="2.0" prefHeight="28.0" prefWidth="187.0">
+                          <menus>
+                            <Menu mnemonicParsing="false" text="Файл">
+                              <items>
+                                <MenuItem fx:id="open" mnemonicParsing="false" onAction="#open" text="Открыть" />
+                                    <MenuItem mnemonicParsing="false" onAction="#showStat" text="Статистика" />
+                              </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="Edit">
+                              <items>
+                                <MenuItem mnemonicParsing="false" text="Delete" />
+                              </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="Help">
+                              <items>
+                                <MenuItem mnemonicParsing="false" text="About" />
+                              </items>
+                            </Menu>
+                          </menus>
+                        </MenuBar>
+                        <TableView fx:id="table" editable="true" layoutY="54.0" prefHeight="519.0" prefWidth="900.0">
+                          <columns>
+                            <TableColumn fx:id="ti" prefWidth="196.0" text="timestamp" />
+                            <TableColumn fx:id="dur" prefWidth="215.0" text="duration" />
+                              <TableColumn fx:id="app" prefWidth="168.0" text="app" />
+                              <TableColumn fx:id="title" minWidth="0.0" prefWidth="319.0" text="title" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="407.0" layoutY="30.0" mnemonicParsing="false" onAction="#dialog" text="Описание данных" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Визуализация">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BarChart fx:id="BarC" layoutX="6.0" layoutY="22.0" prefHeight="555.0" prefWidth="217.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                        <LineChart fx:id="lineC" layoutX="244.0" layoutY="2.0" prefHeight="561.0" prefWidth="656.0" title="lineC">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Анализ">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="table1" editable="true" prefHeight="572.0" prefWidth="459.0">
+                          <columns>
+                            <TableColumn fx:id="naz" prefWidth="157.0" text="Приложение" />
+                            <TableColumn fx:id="dlit" prefWidth="151.0" text="Длительность" />
+                              <TableColumn fx:id="zp" prefWidth="160.0" text="Разметка" />
+                          </columns>
+                        </TableView>
+                        <TableView fx:id="table2" editable="true" layoutX="469.0" prefHeight="576.0" prefWidth="436.0">
+                          <columns>
+                            <TableColumn fx:id="vk" prefWidth="149.0" text="Вкладка браузера" />
+                            <TableColumn fx:id="dlit1" prefWidth="143.0" text="Длительность " />
+                              <TableColumn fx:id="zp1" prefWidth="143.0" text="Разметка" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</Pane>
